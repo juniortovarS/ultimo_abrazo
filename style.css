@@ -4,13 +4,16 @@ body {
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  min-height: 100vh; /* Asegura que ocupe todo el alto de la pantalla */
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 40px 20px;
   text-align: center;
   color: #fff;
   position: relative;
+  box-sizing: border-box; /* Mejora el manejo de padding en móviles */
 }
+
 
 body::before {
   content: '';
