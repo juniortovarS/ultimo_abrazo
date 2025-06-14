@@ -1,0 +1,97 @@
+body {
+  background-image: url('imagenes/image10.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+.intro, .mensaje {
+  font-style: italic;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px 0;
+}
+
+.galeria img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 0.8s ease forwards;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fila especial para image15 con botón a la derecha */
+.fila-imagen-boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.fila-imagen-boton img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+.boton-dinamico {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #ff6a6a, #ff8c8c);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.boton-dinamico:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #e74c3c, #ff6a6a);
+}
